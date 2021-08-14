@@ -1,0 +1,161 @@
+{% extends 'base.html'%}
+{%load static%}
+{%load humanize%}
+
+{%block body%}
+
+
+<div class="profile-infos">
+    <div class="profile-bg">
+
+    </div>
+    <div class="profile-nav">
+        <div class="profile-nav-item">
+            <div class="profile-nav-link blogs">
+                <span class="label">Blogs</span>
+                <span class="count">{{blogs_count}}</span>
+            </div>
+        </div>
+
+        <div class="profile-nav-item">
+            <div class="profile-nav-link games">
+                <span class="label">Games</span>
+                <span class="count">10</span>
+            </div>
+        </div>
+
+        <div class="profile-nav-item">
+            <div class="profile-nav-link groups">
+                <span class="label">Groups</span>
+                <span class="count">10</span>
+            </div>
+        </div>
+        <div class="profile-nav-item">
+            <div class="profile-nav-link videos">
+                <span class="label">Videos</span>
+                <span class="count">10</span>
+            </div>
+        </div>
+        {%if can_fallow == True%}
+            <div class="profile-nav-item">
+                <div class="profile-nav-link fallow-btn">
+                    <span class="label">Fallow</span>
+                </div>
+            </div>
+        {%endif%}
+    </div>
+    <div class="profile-img">
+        <img src="{% static 'images/test.jpg'%}" alt="">
+    </div>
+    <div class="profile-name">
+        <div class="name">
+            <span class="d-none username">{{username}}</span>
+            <h1>{{username}} {{title}}<span><i class="fa fa-check-circle" aria-hidden="true"></i></span></h1>
+        </div>
+    </div>
+</div>
+<br>
+<div class="profile-body">
+
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-sm-12">
+                {%block profile_body%}
+                <div class="container-fluid ">
+                    <div class="row">
+                        <div class="col-sm-9 ">
+                            <div class="_second_profile_body card-group">
+                                <div class="section blogs-section">
+                                    <div class="header">
+                                        <h1>Blogs</h1>
+                                    </div>
+                                    <div class="body">
+                                        
+                                        <div class="latest-blog">
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="section videos-section">
+                                    <div class="header">
+                                        <h1>Videos</h1>
+                                    </div>
+                                    <div class="body">
+                                        <div class="no-blogs-msg">
+                                                <h3><i class="fa fa-ellipsis-h" aria-hidden="true"></i></h3>
+                                                <h3>This Gamer has no Videos to show.</h3>
+                                            </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <div class="section games-section">
+                                    <div class="header">
+                                        <h1>Games</h1>
+                                    </div>
+                                    <div class="body">
+                                        <div class="no-blogs-msg">
+                                                <h3><i class="fa fa-ellipsis-h" aria-hidden="true"></i></h3>
+                                                <h3>This Gamer has no Games to show.</h3>
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="infos">
+                                <div class="fallows-infos">
+                                    <div class="fallowers">
+                                        <div class="count">
+                                            <p>{{fallowers|intword}}</p>
+                                        </div>
+                                        <div class="label">
+                                            <p>Fallowers</p>
+                                        </div>
+                                    </div>
+                                    <hr style="margin:15px 20px;">
+                                    <div class="fallowing">
+                                        <div class="count">
+                                            <p>{{fallowing|intword}}</p>
+                                        </div>
+                                        <div class="label">
+                                            <p>Fallowing</p>
+                                        </div>
+                                    </div>
+                                    <hr style="margin:15px 20px;">
+                                    <div class="stars">
+                                        <div class="count">
+                                            <p><i class="fa fa-star" aria-hidden="true"></i> {{stars|intword}}</p>
+                                        </div>
+                                        <div class="label">
+                                            <p>Stars gained</p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <br>
+                <br>
+                <br>
+                {%endblock profile_body%}
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+{%endblock body%}
+{%block other_scripts%}
+<script src="{%static 'js/me/main.js' %}" async></script>
+<script src="{%static 'js/user/main.js' %}" async></script>
+{%endblock other_scripts%}

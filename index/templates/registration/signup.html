@@ -1,0 +1,40 @@
+{% extends '../base.html'%}
+{%load static%}
+{%block body%}
+<div class="login-container">
+    <form action="{%url 'signup'%}" method="POST" class="login-form">
+        {%csrf_token%}
+        <div class="form-group">
+            <div class="logo d-none d-xs-block">
+                <img src="{% static 'images/logo_blue.svg'%}" width="70px" alt="circle games logo">
+            </div>
+            <br>
+            <h1 class="form-title">Sign Up</h1>
+            <br>
+            {% if error%}
+                <div class="alert alert-danger">
+                    <small>{{error}}</small>
+                </div>
+            {%endif%}
+            <input type="text" name="username" placeholder="User name" id="username" class="form-control">
+            <br>
+            <input type="email" name="email" placeholder="E-mail" id="email" class="form-control">
+            <br>
+            <input type="password" name="password" id="password" placeholder="Password" class="form-control">
+            <br>
+            <input type="password" name="re-password" id="re-password" placeholder="Re-Password" class="form-control">
+            <br>
+            <div class="cg-submit">
+                <button type="submit" class="cg-btn">Sign up</button>
+            </div>
+            <a href="{%url 'login'%}" class="create-account">you already have an account ?</a>
+
+
+        </div>
+
+    </form>
+    <br>
+    <a href="{%url 'login'%}" class="create-account">you already have an account ?</a>
+
+</div>
+{%endblock body%}

@@ -1,0 +1,9 @@
+{% extends 'base.html'%}
+{% load static%}
+{%block body%}
+  {%for game in content%}
+
+    {{game}}
+    <img src="{{game.url}}" alt="">
+  {%endfor%}
+{%endblock body%}

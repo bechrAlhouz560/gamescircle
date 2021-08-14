@@ -1,0 +1,56 @@
+.games-header
+{
+   background-color: var(--cg-red);
+
+   display: flex;
+   align-items: center;
+}
+.games-header .container
+{
+      padding: 50px 80px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+}
+.games-header .container .title
+{
+  display: flex;
+  align-items: center;
+}
+.games-header .container .title span
+{
+    color: white;
+    font-size:100px;
+    font-weight: bold;
+}
+
+
+.games-header .container .title h1
+{
+  font-size: 100px;
+}
+.games-body .content
+{
+  padding:0 80px;
+}
+
+.game-nav
+{
+  height: 55px;
+  background-color: #dff5ff;
+}
+.game-nav .container
+{
+  height: 100%;
+  column-gap: 30px;
+  display: flex;
+}
+.game-nav .container .game-nav-item
+{
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-right: auto; */
+  cursor: pointer;
+}

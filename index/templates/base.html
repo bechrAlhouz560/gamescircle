@@ -1,0 +1,132 @@
+{% load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="{% static 'libs/all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'libs/bootstrap/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles_phone.css' %}">
+    {%block other_styles%}
+    {%endblock other_styles%}
+    <link rel="shortcut icon" href="{% static 'images/logo_blue.svg'%}" type="image/png">
+    <title>Games Circle {%block title %}{%endblock title%}</title>
+</head>
+
+<body>
+    <div class="loading-bar">
+
+    </div>
+    {%block navbar%}
+    <!-- Nav tabs -->
+    <div class="nav-bar">
+        <div class="navbar-nav">
+            <div class="nav-logo" onclick="window.location.href = window.location.origin">
+                <img src="{% static 'images/logo_blue.svg'%}" class="logo" alt="">
+            </div>
+            <div class="nav-item">
+                <a href="{%url 'home'%}" class="nav-link">
+                    <i class="fa fa-home" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="{%url 'me'%}" class="nav-link">
+                    <i class="fa fa-user-circle" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="videos" class="nav-link">
+                    <i class="fa fa-desktop" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="nav-item">
+                <div class="nav-link search">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </div>
+
+            </div>
+            <div class="nav-item">
+                <div class="notifications nav-link">
+                    <i class="fa fa-bell" aria-hidden="true"></i>
+                </div>
+
+            </div>
+            <div class="nav-item">
+                <a href="{%url 'blogs'%}" class="nav-link">
+                    <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                </a>
+            </div>
+            <div class="nav-item">
+                <a href="{%url 'options' %}" class="nav-link">
+                    <i class="fa fa-bars" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+        <div class="notifys-container">
+            <div class="title">
+                <h4 class="ml-3"><i class="fa fa-bell mr-3" aria-hidden="true"></i> Notifications</h4>
+            </div>
+
+            <div class="body">
+                <div class="notification">
+                    <div class="title">
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="search-container">
+            <div class="search-input">
+                <input type="text" name="search-text" id="search-text" placeholder="Search Here...">
+                <button><i class="fa fa-search" aria-hidden="true"></i></button>
+            </div>
+            <!-- minimized search options -->
+            <!-- <div class="min-search-options">
+                <div class="min-search-option">
+                    <span class="sort-by"> Sort by <i class="fa fa-sort ml-1" aria-hidden="true"></i></span>
+                </div>
+                <div class="search-type">
+                    <div class="type type-active">All</div>
+                    <div class="type">Videos</div>
+                    <div class="type">Blogs</div>
+                    <div class="type">Games</div>
+                </div>
+
+            </div> -->
+
+            <div class="body">
+                <h1><i class="fa fa-search" aria-hidden="true"></i></h1>
+                <h2>Type to search...</h2>
+            </div>
+        </div>
+    </div>
+    {% endblock navbar%}
+
+    <div class="main">
+        {% csrf_token%}
+
+        {%block body%}
+        {%endblock body%}
+        {% block footer%}
+        {% endblock footer%}
+    </div>
+
+    <script src="{% static 'libs/all.min.js'%}"></script>
+    <script src="{% static 'libs/jquery.min.js'%}"></script>
+    <script src="{% static 'libs/bootstrap/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'libs/anime.min.js'%}"></script>
+    {%block scripts%}
+    <script src="{% static 'min/js/script.js'%}"></script>
+    {%if user.is_authenticated%}
+    <script src="{% static 'js/user/notifications.js'%}"></script>
+    {%endif%}
+    {%endblock scripts%}
+    {%block other_scripts%}
+    {%endblock other_scripts%}
+</body>
+
+</html>

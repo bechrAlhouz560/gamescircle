@@ -1,0 +1,55 @@
+{% extends 'base.html'%}
+{% load static%}
+{%block other_styles%}
+<link rel="stylesheet" href="{% static 'css/games/style.css' %}">
+  <link rel="stylesheet" href="{% static 'css/games/responsive.css' %}">
+{%endblock other_styles%}
+{%block body%}
+
+<div class="games-header">
+  <div class="container">
+      <div class="title">
+        <span class="mr-4"><i class="fa fa-gamepad"></i></span>
+          <span> Games</span>
+      </div>
+  </div>
+</div>
+<div class="game-nav">
+  <div class="container">
+      <div class="game-nav-item">
+          <div class="game-nav-link">
+              <span>Link</span>
+          </div>
+      </div>
+      <div class="game-nav-item">
+          <div class="game-nav-link">
+              <span>Link</span>
+          </div>
+      </div>
+      <div class="game-nav-item">
+          <div class="game-nav-link">
+              <span>Link</span>
+          </div>
+      </div>
+  </div>
+</div>
+<br>
+<div class="games-body">
+    <div class="content">
+      {% for game in content %}
+
+             <div class="game">
+                  <h1>{{game.name}}</h1>
+                  <h3>summary</h3>
+                  <p>{{game.summary}}</p>
+                  <h3>Total Rating</h3>
+                  <p>{{game.total_rating_count}}</p>
+             </div>
+             <hr>
+      {% endfor %}
+    </div>
+</div>
+{%endblock body%}
+{%block other_scripts%}
+<script src="{%static 'js/games/master.js'%}" charset="utf-8"></script>
+{%endblock other_scripts%}

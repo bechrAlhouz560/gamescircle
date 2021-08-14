@@ -1,0 +1,297 @@
+
+/* Games Circle 2021 All rights reserved */
+/* Coded with Heart by: Bechr ALhouz */
+body .first-header
+{
+    height: 70px;
+    margin-bottom: 20px;
+    background-color: var(--cg-orange);
+    width: 100%;
+}
+
+.blog-container 
+{
+    width: 100%;
+}
+.blog-container .blog-img
+{
+    height: 400px;
+    width: 100%;
+    overflow: hidden;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    background-color: var(--cg-blue);
+}
+.blog-container .blog-img img
+{
+    transition: all ease .3s;
+    width:100%;
+    position: relative;
+
+}
+.blog-container .blog-img:hover img
+{
+    opacity: .7;
+    width:150%;
+}
+.blog-container .blog-title
+{
+    padding: 20px;
+    width: 100%;
+}
+.blog-container .blog-title .title
+{
+    color: var(--cg-orange);
+    font-size: 40px;
+}
+.blog-container .blog-title .date
+{
+    color: var(--cg-blue);
+    opacity: .7;
+}
+.blog-container .blog-content
+{
+    width: 100%;
+    padding: 0 20px;
+}
+
+.blog-container .blog-content p
+{
+    font-size: 15pt;
+    color: #075f88a2;
+    text-indent: 20px;
+    text-align: left;
+    text-justify: newspaper;
+}
+
+.blog-container .blog-rates
+{
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+}
+.blog-container .blog-rates .count
+{
+    color: var(--cg-orange);
+}
+
+.stars .star
+{
+    color: #ffd2cbd8;
+    cursor:pointer;
+}
+.stars  .star-active
+{
+    color: var(--cg-orange);
+}
+.comments-container 
+{
+    width: 100%;
+    padding:25px;
+}
+.average-rate
+{
+    margin-left: 30px;
+    display: flex;
+}
+.blog-views 
+{
+    margin-left: 30px;
+    display: flex;
+    color: var(--cg-blue);
+}
+.comments-container .list-comments
+{
+    width: 100%;
+
+}
+.comments-container .list-comments .title h4
+{
+    font-size: 15pt;
+    color: var(--cg-blue);
+}
+
+.comments-container .list-comments .body 
+{
+    width: 100%;
+}
+.comments-container .list-comments .body .more-comments
+{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+    
+}
+.comments-container .list-comments .body .more-comments .more-comments-btn
+{
+    width: 60px;
+    height: 60px;
+    border-radius: 150px;
+    border: 1pt solid var(--cg-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 15pt;
+    color: var(--cg-blue);
+    cursor: pointer;
+    transition: all linear .3s;
+}
+.comments-container .list-comments .body .more-comments .more-comments-btn:hover
+{
+    color: white;
+    background-color: var(--cg-blue);
+}
+
+.comments-container .list-comments .body  .comments-empty
+{
+    height: 100px;
+    width: 100%;
+    background-color: #f0faff;
+    color: var(--cg-blue);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 12pt;
+}
+.comments-container .list-comments .body .comments-empty p
+{
+    font-size: 18pt;
+
+}
+comment-inputs
+{
+    width: 100%;
+}
+.comment-inputs textarea
+{
+    width: 100%;
+    height: 70px;
+    border: none;
+    border-radius: 0;
+    border: 1.2pt solid var(--cg-orange);
+    color: var(--cg-red);
+    transition: all ease 0.3s;
+    appearance: none !important;
+    padding: 10px;
+}
+.comment-inputs textarea:focus
+{
+    outline: none;
+}
+
+.comment-inputs button
+{
+    border: none;
+    color: white;
+    background-color: var(--cg-red);
+    text-align: center;
+    height: 40px;
+    width: 100%;
+    cursor: pointer;
+    transition: all ease 0.3s;
+}
+.comment-inputs button:hover {
+    color: var(--cg-red);
+    background-color: white;
+    border: 1.2pt solid var(--cg-red);
+}
+.comment-inputs button:disabled
+{
+    opacity: .5;
+}
+.comment-inputs textarea::placeholder
+{
+    color: #f19191c5;
+
+}
+
+.comment {
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.comment .user_img {
+    width: 35px;
+    height: 35px;
+    border-radius: 150px;
+    background-color: var(--cg-blue);
+    margin-right: 10px;
+
+}
+.comment_content
+{
+    width: 90%;
+    margin-bottom: 10px;
+    
+}
+.comment .comment_content .content
+{
+    width: fit-content;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--light);
+    max-width: 100%;
+    text-align: left;
+    height: auto;
+    text-justify: newspaper;
+    color: var(--cg-blue);
+    background-color: #f0faff;
+
+}
+.comments_count {
+        width: 30px;
+        height: 30px;
+        font-size: small;
+        background-color: var(--cg-blue);
+        color: white;
+        border-radius: 150px;
+        padding: 5px;
+}
+
+.comment .comment_content .content .username
+{
+    font-weight: bolder;
+    color: #06557a;
+    font-size: 13px;
+    cursor: pointer;
+}
+.comment .comment_content .content .username:hover
+{
+    text-decoration: underline;
+}
+
+.comment .comment_content .options
+{
+    display: flex;
+    padding-left: 10px;
+}
+
+.comment .comment_content .options .option
+{
+    margin-right: 10px;
+    color: var(--cg-blue);
+    font-size: 14px;
+}
+.comment .comment_content .options  .reply
+{
+    cursor: pointer;
+}
+.comment .comment_content .options .reply:hover
+{
+    text-decoration: underline;
+    color: var(--cg-dark-blue);
+}
+
+ .tagged
+{
+    font-weight: bold;
+    color: #0e6b96e5;
+    padding-right: 3px;
+    cursor: pointer;
+}
+

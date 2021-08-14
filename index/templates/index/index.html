@@ -1,0 +1,30 @@
+{% extends '../base.html'%}
+{%load static%}
+
+{%load humanize%}
+{%block body%}
+<div class="welcome-page">
+    <div class="welcome">
+        
+        <span style="font-size: 30px;color:white;opacity:0.8;padding-bottom: 20px;">Welcome To</span> 
+        <h1 class="brand-name"> Games Circle ! <br> </h1>
+        <span class="label">The New Gamers community place...</span>
+        <br>
+        <button class="cg-btn btn-white-orange">Learn More...</button>
+    </div>
+
+</div>
+<br>
+<div class="section feutures">
+    <h1>Fallow Your favorite games's news {{name|naturaltime}}</h1>
+    <h1>{{users_count}}+ gamers are joined the community !</h1>
+    
+</div>
+
+{%endblock body%}
+
+{%block footer%}
+<div class="footer">
+    This is the footer
+</div>
+{%endblock footer%}

@@ -1,0 +1,81 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block other_styles%}
+<link rel="stylesheet" href="{%static 'css/blog_creator/style.css'%}">
+
+{%endblock other_styles%}
+{%block body%}
+<div class="blog-creator-header">
+    <div class="title">
+        <h1><i class="fas fa-edit mr-4"></i> Blog Creator</h1>
+    </div>
+</div>
+<br>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-8 pl-sm-5">
+            <div class="blog-creator-main">
+                <div class="title">
+                    <h1><i class="fa fa-window-maximize mr-3" aria-hidden="true"></i> Blog View</h1>
+                </div>
+                <hr>
+                <div class="blog-view">
+                    <div class="new-blog-cover">
+                        <div class="cover">
+
+                        </div>
+                        <input type="file" accept="jpg" name="bechr" id="image-cover" class="d-none">
+                        <button class="cg-btn upload-cover-btn w-100"><i class="fa fa-upload mr-3"
+                                aria-hidden="true"></i>
+                            Upload a cover photo
+                        </button>
+                    </div>
+                    <br>
+                    <div class="new-blog-title">
+                        <input type="text" class="title-input" placeholder="Title of your Blog">
+                    </div>
+                    <br>
+                    <div class="editor-tools">
+
+
+                    </div>
+                    <hr class="mt-0 mb-4 mr-0 ml-0">
+                    <div  g_editable="true" hidefocus="true" contenteditable="true" class="blog-editable">
+
+                    </div>
+                    <!-- <div class="empty-blog">
+                         <div class="thumbnail">
+                            <span><i class="fas fa-box    "></i></span>
+
+
+                        </div>
+                        <div class="title">
+                            <h1>
+                                Drop a Component Here...</h1>
+                        </div>
+
+                    </div> -->
+                </div>
+            </div>
+            <hr>
+            <div class="submit-btns">
+                <button class="cg-btn cancel"><i class="fas fa-arrow-left mr-2" aria-hidden="true"></i> Cancel</button>
+                <button class="cg-btn ml-2 post">Post <i class="fas fa-arrow-right ml-2"
+                        aria-hidden="true"></i></button>
+            </div>
+        </div>
+        <div class="col-md-4 pr-sm-5">
+
+
+        </div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+{%endblock body%}
+{%block other_scripts%}
+<script src="https://cdn.jsdelivr.net/npm/@editorjs/editorjs@latest"></script>
+<script src="{%static 'js/blogs/creator/blog_creator.js'%}" defer></script>
+{%endblock other_scripts%}

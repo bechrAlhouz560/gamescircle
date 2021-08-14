@@ -1,0 +1,105 @@
+{%extends 'base.html'%}
+{%load static%}
+{%load humanize%}
+{%block body%}
+
+<div class="first-header">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-8">
+            <div class="blog-container" id="{{blog_id}}">
+                <div class="blog-img">
+                    <img src="{{blog_image}}" alt="">
+                </div>
+                <div class="blog-title">
+                    <span class="date">{{created_date|naturaltime}} - {{created_date}} - By <a href="../../user/{{created_by}}">{{created_by}}</a></span>
+                    <div class="title">
+                        <div class="text">
+                            <p>{{title}}</p>
+                        </div>
+
+                    </div>
+                    <hr>
+                </div>
+                <div class="blog-content">
+                    
+                </div>
+                <div class="blog-rates">
+                    {%if user.is_authenticated%}
+                    <div class="stars">
+                        <span class="star 1 mr-1"><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span class="star 2 mr-1"><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span class="star 3 mr-1"><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span class="star 4 mr-1"><i class="fa fa-star" aria-hidden="true"></i></span>
+                        <span class="star 5"><i class="fa fa-star" aria-hidden="true"></i></span>
+                    </div>
+                    {%endif%}
+
+                    <div class="average-rate">
+                        <div class="stars">
+                            <span class="star 1 mr-1"><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <span class="star 2 mr-1"><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <span class="star 3 mr-1"><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <span class="star 4 mr-1"><i class="fa fa-star" aria-hidden="true"></i></span>
+                            <span class="star 5"><i class="fa fa-star" aria-hidden="true"></i></span>
+                        </div>
+                        <div class="count ml-3">
+                            <span>0</span>
+                        </div>
+                    </div>
+                    <div class="blog-views">
+                        <span class="views"><i class="fa fa-eye mr-2" aria-hidden="true"></i> {{views}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="comments-container">
+                <div class="list-comments">
+                    <div class="title">
+                        <h4><i class="fas fa-comments mr-3 "></i> Comments <span class="comments_count ml-2">0</span>
+                        </h4>
+                    </div>
+                    <hr>
+                    <div class="body">
+
+                    </div>
+                    {%if user.is_authenticated%}
+                    <br>
+                    <div class="footer">
+                        <div class="comment-inputs">
+                            <textarea id="comment-text" placeholder="Your comment here..."></textarea>
+                            <button class="cg-btn" id="comment-btn"><i class="fas fa-paper-plane    "></i></button>
+                        </div>
+                    </div>
+                    {%endif%}
+
+                </div>
+
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <div class="similar-blogs">
+                <div class="header">
+                    <h3>Similar Blogs You May like </h3>
+                </div>
+                <div class="body">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+{%endblock body%}
+{%block other_scripts%}
+<script src="{%static 'js/blogs/blog/main.js'%}" defer></script>
+
+{%endblock other_scripts%}
+
+{%block other_styles%}
+<link rel="stylesheet" href="{%static 'css/blog/blog.css'%}">
+{%endblock other_styles%}
