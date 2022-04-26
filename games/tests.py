@@ -4,8 +4,8 @@ from django.test import TestCase
 import requests
 
 class IGDB ():
-    SECRET_ID = '1cvawnjwhtsxfrpsdk8ka69dgmy4jr'
-    CLIENT_ID = 'swkjgyiuwfbo1iyy6q4ef7u48tsohh'
+    SECRET_ID = ''
+    CLIENT_ID = ''
     TOKEN = {}
     base_URL = 'https://api.igdb.com/v4'
     HEADER = {}
